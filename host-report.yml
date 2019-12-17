@@ -2,7 +2,7 @@
 - name: Create a report of all hosts in the inventory
   hosts: all
   gather_facts: yes
-- hosts: local
+- hosts: localhost
   gather_facts: no
   tasks:
     - template:
