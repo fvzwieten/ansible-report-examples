@@ -1,4 +1,10 @@
 ---
 - name: Create a report of all hosts in the inventory
   hosts: all
-
+  gather_facts: yes
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - template:
+        src: hostreport.j2
+        dest: hostreport.html
