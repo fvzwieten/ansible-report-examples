@@ -7,4 +7,4 @@
   tasks:
     - template:
         src: hostreport.j2
-        dest: hostreport.html
+        dest: /tmp/hostreport.html
