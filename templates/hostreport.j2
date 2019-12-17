@@ -1,0 +1,8 @@
+My Jinja template:
+.......
+{% for host in groups['all'] %}
+ {% if not host==inventory_hostname %}
+hostname: {{ansible_facts['ansible_fqdn']}} uptime: {{ansible_facts['ansible_uptime_seconds']}}
+ {% endif %}
+{% endfor %}
+.......
