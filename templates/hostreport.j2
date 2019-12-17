@@ -1,8 +1,26 @@
-My Jinja template:
-.......
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<h2>Host Uptime Report</h2>
+<table>
+  <tr>
+    <th>Host</th>
+    <th>Uptime</th>
+  </tr>
 {% for host in groups['all'] %}
- {% if not host==inventory_hostname %}
-blabla
- {% endif %}
+{% if not host==inventory_hostname %}
+<tr>
+<td>{{ hostvars[host]['ansible_fqdn'] }}</td>
+<td>{{ hostvars[host]['ansible_uptime_seconds'] }}</td>
+</tr>
+{% endif %}
 {% endfor %}
-.......
+</table>
+</body>
+</html>
