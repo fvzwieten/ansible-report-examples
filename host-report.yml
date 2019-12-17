@@ -1,0 +1,4 @@
+---
+- name: Create a report of all hosts in the inventory
+  hosts: all
+
