@@ -2,7 +2,6 @@ My Jinja template:
 .......
 {% for host in groups['all'] %}
  {% if not host==inventory_hostname %}
-hostname: {{ansible_facts['ansible_fqdn']}} uptime: {{ansible_facts['ansible_uptime_seconds']}}
- {% endif %}
+{{ hostvars[host]['ansible_default_ipv4']['address'] }} {{ hostvars[host]['ansible_hostname'] }} {{ hostvars[host]['ansible_fqdn'] }} {% endif %}
 {% endfor %}
 .......
